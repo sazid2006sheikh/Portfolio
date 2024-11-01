@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio@sazid</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.config.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap" rel="stylesheet">
+    <style>
+        .section {
+            height: max-content;
+            max-width: 80%;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            margin-left: 9.5%;
+            padding: 20px;
+            border: 1px solid rgba(150, 150, 150, 0.2);
+            border-radius: 35px;
+            background: linear-gradient(135deg, rgba(245, 245, 245, 1) 0%, rgba(234, 232, 232, 1) 100%);
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1), 0px 6px 20px rgba(0, 0, 0, 0.15); /* Softened shadow */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        /* Hover effect for an interactive feel */
+        .section:hover {
+            box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.15), 0px 10px 30px rgba(0, 0, 0, 0.2);
+            border-color: rgba(100, 100, 100, 0.3); /* Slight border color change on hover */
+        }
+        
+        /* Inner content styling for better contrast */
+        .section-content {
+            color: #333; /* Darker text color for better contrast */
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+        
+        /* Subtle animation for shadow and border glow */
+        @keyframes glow {
+            0%, 100% { box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1); }
+            50% { box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); }
+        }
+        
+        .section {
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        #Skills{
+            height: fit-content;
+            width: auto;
+            border: 1px solid black;
+            
+            border-bottom-right-radius: 100px;
+            background-color: black;
+            margin-bottom: 100px;
+        }
+        .custom-border-radius {
+            border-top-right-radius: 35px;
+            border-bottom-right-radius: 100px;
+        }
+        
+        
+        /* Custom shake animation */
+        @keyframes shake-horizontal {
+            0%, 100% {
+                transform: translateX(0);
+            }
+            25% {
+                transform: translateX(-2px);
+            }
+            50% {
+                transform: translateX(2px);
+            }
+            75% {
+                transform: translateX(-2px);
+            }
+        }
+
+        .group-hover\:animate-shake-horizontal:hover {
+            animation: shake-horizontal 0.4s ease-in-out both;
+        }
+
+        /* Ensures no underline on the link */
+        .no-underline {
+            text-decoration: none;
+        }
+
+
+    </style>
+</head>
+<body class="overflow-x-hidden" font-Outfit>
+
+    <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
+        <img src="./images/header-bg-color.png" alt="" class="w-full">
+    </div>
+
+
+    <nav class="w-full fixed px-5 lg:px-8 lg:px[8%] py-4 flex items-center justify-between z-50">
+        <img src="./images/logo.png" alt="Logo"
+        class="w-28 cursor-pointer mr-14">
+        <ul class="hidden md:flex items-center gap-6 lg:gap-8
+        rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50">
+            <li><a href="#top">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#Skills">Skills</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Connect</a></li>
+        </ul>
+        <div class="flex items-center gap-4">
+            <button><img src="./images/moon_icon.png" alt="" class="w-6"></button>
+
+            <a href="https://linktr.ee/sazid_sheikh" class="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4">
+            Contact <img src="./images/arrow-icon.png" alt="" class="w-3"></a>
+
+            <button class="block md:hidden ml-3" onclick="openMenu()">
+                <img src="./images/menu-black.png" alt="" class="w-6">
+            </button>
+        </div>
+
+<!-- ------mobile menu ------- -->     
+
+        <ul id="sideMenu" class="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500">
+
+            <div class="absolute right-6 top-6" onclick="closeMenu()">
+                <img src="./images/close-black.png" alt="" class="w-5 cursor-pointer" >
+            </div>
+
+            <li><a href="#top" onclick="closeMenu()">Home
+            </a></li>
+            <li><a href="#about" onclick="closeMenu()">About me</a></li>
+            <li><a href="#services" onclick="closeMenu()">Services</a></li>
+            <li><a href="#work" onclick="closeMenu()">My Work</a></li>
+            <li><a href="#contact" onclick="closeMenu()">Contact me</a></li>
+        </ul> 
+    </nav>
+    
+<!-- -------------header--------------- -->
+
+<div class="w-11/12 max-w-3x1 text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
+    <img src="./images/profile-img.jpeg" alt="" class="rounded-full w-32">
+    <h3 class="flex items-end gap-2 text-xl md:text-2xl mb-3">
+        Hi! I'm Sazid Sheikh <img src="./images/hand-icon.png" alt="" class="w-6"></h3>
+    <h1 class="text-3xl sm:text-6xl lg:text-[66px]">Frontend web developer<br> based in India.</h1>
+    <p class="max-w-2xl mx-auto">I am a Frontend developer from New Delhi, India <br>with 1 year of experience in multiple projects.</p>
+
+    <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
+        <a href="#contact"
+        class="px-10 py-3 border rounded-full bg-gradient-to-r from-[#b820e6] to-[#da7d20] text-white flex items-center gap-2">Message me<img src="./images/right-arrow-white.png" alt="" class="w-4"></a>
+
+        <a href="./images/logo.png" download
+        class="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 bg-white">my resume<img src="./images/download-icon.png" alt="" class="w-4"></a>
+    </div>
+</div>
+
+<!-- --------about me-----------  -->
+<div id="about" class="w-full px-[12%] py-10 scroll-mt-5">
+    <h4 class="text-center mb-2 text-lg">Introduction</h4>
+    <h2 class="text-center text-5xl">About me</h2>
+
+    <div class="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
+        <div class="max-w-max mx-auto relative">
+            <img src="./images/user-image.jpg" alt="" class="w-64 sm:w-80 rounded-3xl max-w-none">
+        </div>
+
+        <div class="flex-1">
+            <p class="mb-10 max-w-2xl">I am an experienced forntend developer with over a decade fo professional expertise in the field. </p>
+
+            <ul class="grid grid-cols-1 sm:grid-cols-auto gap-6 max-w-2xl">
+                <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]"> 
+                    <img src="./images/code-icon.png" alt="" class="w-7 mt-3"> 
+                    <h3 class="my-4 font-semibold text-gray-700">Languages</h3>
+                    <p class="text-gray-600 text-sm">HTML, CSS, JavaScript, Next.js, Python, MySQL</p>
+                </li>
+                <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]"> 
+                    <img src="./images/edu-icon.png" alt="" class="w-7 mt-3"> 
+                    <h3 class="my-4 font-semibold text-gray-700">Education</h3>
+                    <p class="text-gray-600 text-sm">B.tech in Computer Science</p>
+                </li>
+                <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]"> 
+                    <img src="./images/project-icon.png" alt="" class="w-7 mt-3"> 
+                    <h3 class="my-4 font-semibold text-gray-700">projects</h3>
+                    <p class="text-gray-600 text-sm">Built more than 5 projects</p>
+                </li>
+
+            </ul>
+            <h4 class="my-6 text-gray-700">Tools i use -</h4>
+            
+            <ul class="flex items-center gap-3 sm:gap-5">
+                <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                    <img src="./images/vscode.png" alt="" class="w-5 sm:w-7">
+                </li>
+                <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                    <img src="./images/firebase.png" alt="" class="w-5 sm:w-7">
+                </li>
+                <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                    <img src="./images/mongodb.png" alt="" class="w-5 sm:w-7">
+                </li>
+                <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                    <img src="./images/figma.png" alt="" class="w-5 sm:w-7">
+                </li>
+                <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border border-gray-400 rounded-lg cursor-pointer hover:-translate-y-1 duration-500">
+                    <img src="./images/git.png" alt="" class="w-5 sm:w-7">
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+<!-- ---------skills------- -->
+    <div id="Skills" class="w-full px-6 lg:px-12 py-10 scroll-mt-19 bg-gray-50">
+        <h2 class="text-center text-5xl text-white font-bold text-gray-800">My Skills</h2>
+        <p class="text-center max-w-2xl mx-auto mt-5 mb-12 text-white text-gray-600">
+            I'm developer from New Delhi, India with 1 year of experience in multiple projects.
+        </p>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-2 gap-8 my-10">
+            <!-- Web Development Card -->
+        <div class="border border-gray-300 rounded-lg p-6 hover:shadow-2xl cursor-pointer bg-gradient-to-r from-gray-200 to-gray-300 bg-opacity-80 transition-transform duration-500 hover:-translate-y-2 hover:bg-opacity-100 transform hover:scale-105">
+            <img src="./images/web-icon.png" alt="Web Development Icon" class="w-12 mx-auto mb-6">
+            <h3 class="text-xl font-semibold text-gray-900 mb-2 text-center">Web Development</h3>
+            <p class="text-sm text-gray-700 leading-relaxed text-center mb-4">
+                Crafting seamless digital experiences through innovative web solutions. Explore the latest technologies that power the web:
+            </p>
+            <ul class="text-sm text-gray-700 leading-relaxed text-center mb-4 space-y-1">
+                <li class="flex items-center justify-center"><span class="text-gray-800">🔹</span> HTML5</li>
+                <li class="flex items-center justify-center"><span class="text-gray-800">🔹</span> CSS3</li>
+                <li class="flex items-center justify-center"><span class="text-gray-800">🔹</span> JavaScript (ES6+)</li>
+                <li class="flex items-center justify-center"><span class="text-gray-800">🔹</span> Tailwind CSS</li>
+                <li class="flex items-center justify-center"><span class="text-gray-800">🔹</span> Bootstrap</li>
+                <li class="flex items-center justify-center"><span class="text-gray-800">🔹</span> Next.js</li>
+            </ul>
+            <p class="text-xs text-gray-600 text-center mb-4 italic">Transforming ideas into captivating digital realities.</p>
+            <a href="#" class="flex items-center justify-center gap-2 text-sm text-gray-800 font-medium mt-5 hover:text-gray-900">
+                Discover More
+                <img src="./images/right-arrow.png" alt="Arrow Icon" class="w-4 transform transition-transform duration-300 hover:translate-x-1">
+            </a>
+        </div>
+
+        <!-- Backend Development Card -->
+        <div class="border border-gray-300 rounded-l-lg custom-border-radius p-6 hover:shadow-2xl cursor-pointer bg-gradient-to-r from-gray-200 to-gray-300 bg-opacity-60 transition-transform duration-500 hover:-translate-y-2 hover:bg-opacity-100 transform hover:scale-105">
+            <img src="./images/mobile-icon.png" alt="Backend Development Icon" class="w-12 mx-auto mb-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-2 text-center">Backend Development</h3>
+            <p class="text-sm text-gray-700 leading-relaxed text-center mb-4">
+                Creating robust server-side solutions for seamless data management and security:
+            </p>
+            <ul class="text-sm text-gray-700 leading-relaxed text-center mb-4 space-y-1">
+                <li class="flex items-center justify-center"><span class="text-gray-800">🔹</span> Node.js</li>
+                <li class="flex items-center justify-center"><span class="text-gray-800">🔹</span> Express.js</li>
+                <li class="flex items-center justify-center"><span class="text-gray-800">🔹</span> MongoDB</li>
+                <li class="flex items-center justify-center"><span class="text-gray-800">🔹</span> SQL</li>
+            </ul>
+            <p class="text-xs text-gray-600 text-center mb-4 italic">Empowering applications with efficient data handling.</p>
+            <a href="#" class="flex items-center justify-center gap-2 text-sm text-gray-800 font-medium mt-5 hover:text-gray-900">
+                Read more
+                <img src="./images/right-arrow.png" alt="Arrow Icon" class="w-4 transform transition-transform duration-300 hover:translate-x-1">
+            </a>
+        </div>
+
+        </div>
+    </div>
+
+
+
+
+
+<!-- --------my work------------- -->
+<div class="section">
+    
+    <div id="work" class="w-full px-[12%] py-10 scroll-mt-20">
+        <!-- <h4 class="text-center mb-2 text-lg">My Portfolio</h4> -->
+        <h2 class="text-center text-5xl">Workspace</h2>
+        <p class="text-center max-w-2xl mx-auto mt-5 mb-12">Welcome to Projects Section! Explore a collection of projects showcasing my expertise in innovation and development.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-10 px-4">
+
+        <!-- Card 1 -->
+        <div class="aspect-square bg-[url('./images/frontend.jpg')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group hover:scale-105 transition duration-300 shadow-lg transform-gpu">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 rounded-lg"></div>
+            <div class="bg-white w-10/12 rounded-xl absolute bottom-5 left-1/2 -translate-x-1/2 py-4 px-6 flex items-center justify-between duration-500 group-hover:bottom-8 shadow-xl transform transition group-hover:scale-105">
+                <div>
+                    <h2 class="font-bold text-md text-gray-800 transition duration-300 group-hover:text-black">
+                        Frontend Projects
+                    </h2>
+                    <p class="text-sm text-gray-600 group-hover:text-gray-800 transition duration-300">
+                        UI/UX Development
+                    </p>
+                </div>
+                <div class="border rounded-full border-gray-700 w-10 aspect-square flex items-center justify-center shadow-[3px_3px_0_#333] group-hover:bg-lime-400 transition duration-300 group-hover:scale-110">
+                    <a href="#" class="no-underline inline-block transition-transform duration-300 transform group-hover:animate-shake-horizontal">
+                        <img src="./images/send-icon.png" alt="Send Icon" class="w-6 transition-transform duration-300 transform group-hover:rotate-12">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- Card 2 -->
+        <div class="aspect-square bg-[url('./images/backend.jpg')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group hover:scale-105 transition duration-300 shadow-lg transform-gpu">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 rounded-lg"></div>
+            <div class="bg-white w-10/12 rounded-xl absolute bottom-5 left-1/2 -translate-x-1/2 py-4 px-6 flex items-center justify-between duration-500 group-hover:bottom-8 shadow-xl transform transition group-hover:scale-105 " >
+                <div>
+                    <h2 class="font-bold text-md text-gray-800 transition duration-300 group-hover:text-black">
+                        Backend Projects
+                    </h2>
+                    <p class="text-sm text-gray-600 group-hover:text-gray-800 transition duration-300">
+                        Development
+                    </p>
+                </div>
+                <div class="border rounded-full border-gray-700 w-10 aspect-square flex items-center justify-center shadow-[3px_3px_0_#333] group-hover:bg-lime-400 transition duration-300 group-hover:scale-110">
+                    <a href="#" class="no-underline inline-block transition-transform duration-300 transform group-hover:animate-shake-horizontal">
+                        <img src="./images/send-icon.png" alt="Send Icon" class="w-6 transition-transform duration-300 transform group-hover:rotate-12">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="aspect-square bg-[url('./images/iot.jpg')] bg-no-repeat bg-cover bg-center rounded-lg relative cursor-pointer group hover:scale-105 transition duration-300 shadow-lg transform-gpu">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 rounded-lg"></div>
+            <div class="bg-white w-10/12 rounded-xl absolute bottom-5 left-1/2 -translate-x-1/2 py-4 px-6 flex items-center justify-between duration-500 group-hover:bottom-8 shadow-xl transform transition group-hover:scale-105 " >
+                
+                <div>
+                    <h2 class="font-bold text-md text-gray-800 transition duration-300 group-hover:text-black">
+                        IoT Projects
+                    </h2>
+                    <p class="text-sm text-gray-600 group-hover:text-gray-800 transition duration-300">
+                        Automation
+                    </p>
+                </div>
+                <div class="border rounded-full border-gray-700 w-10 aspect-square flex items-center justify-center shadow-[3px_3px_0_#333] group-hover:bg-lime-400 transition duration-300 group-hover:scale-110">
+                    <a href="#" class="no-underline inline-block transition-transform duration-300 transform group-hover:animate-shake-horizontal">
+                        <img src="./images/send-icon.png" alt="Send Icon" class="w-6 transition-transform duration-300 transform group-hover:rotate-12">
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+<!-- ------contact-------- -->
+<div id="contact" class="w-full px-[12%] py-10 scroll-mt-20 bg-[url('./images/footer-bg-color.png')] bg-no-repeat bg-[length:90%_auto] bg-center">
+    <h4 class="text-center mb-2 text-lg">Connect with me</h4>
+    <h2 class="text-center text-5xl">Get in touch</h2>
+    <p class="text-center max-w-2xl mx-auto mt-5 mb-12">I'd love to hear from you! if you have any questions, comments or feedback, please use the form below.</p>
+
+    <form action="" class="max-w-2xl mx-auto">
+        <div class="grid grid-cols-auto gap-6 mt-10 mb-8">
+            <input type="text" placeholder="Enter your name" class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white">
+
+            <input type="email" placeholder="Enter your email" class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white">
+        </div>
+        <textarea rows="6" placeholder="Enter your message" class="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6"></textarea>
+        <button class="py-3 px-8 w-max flex items-center justify -between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500">Submit now
+            <img src="./images/right-arrow-white.png" alt="" class="w-4">
+        </button>
+    </form>
+</div>
+<!-- -------footer---------- -->
+<div class="mt-20">
+    <div class="text-center">
+        <img src="./images/logo.png" alt="" class="w-36 mx-auto mb-2">
+        <div class="w-max flex items-center gap-2 mx-auto">
+            <img src="./images/mail_icon.png" alt="" class="w-6">sazid20063008@gmail.com
+        </div>
+    </div>
+    <div class="text-center sm:flex items-center justify-between border-t border-gray-400 mx-[5%] m-10 py-6 ">
+        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+        <ul class="flex items-center gap-6 justify-center mt-4 sm:mt-0">
+            <li><a href="https://www.instagram.com/yoursazidd/"><i class="fa-brands fa-instagram"></i></a></li>
+            <li><a href="https://github.com/sazid2006sheikh"><i class="fa-brands fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/sazid-sheikh-258714283"><i class="fa-brands fa-linkedin"></i></a></li>
+            <li><a href="https://x.com/Sazidsheikh2006"><i class="fa-brands fa-twitter"></i></a></li>
+        </ul>
+    </div>
+</div>
+
+<script src="./script.js"></script>  
+</body>
+</html>
